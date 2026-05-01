@@ -10,3 +10,4 @@ urlpatterns = [
     path("members/", views.members, name="members"),
     path("admin/", admin.site.urls),
 ]
+handler404 = "members.views.error_404"
