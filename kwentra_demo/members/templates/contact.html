@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kwentra — Powerful Hospitality Technology</title>
+    <title>Contact — Kwentra</title>
     <style>
       * {
         margin: 0;
@@ -41,11 +41,11 @@
       }
       .hero {
         text-align: center;
-        padding: 120px 20px;
+        padding: 80px 20px;
         background: linear-gradient(135deg, #0a1628 0%, #0d1f3c 100%);
       }
       .hero h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
         color: #00d4ff;
         margin-bottom: 20px;
       }
@@ -53,42 +53,43 @@
         font-size: 1.2rem;
         color: #b0c4de;
         max-width: 600px;
-        margin: 0 auto 40px;
+        margin: 0 auto;
       }
-      .btn {
-        display: inline-block;
-        padding: 12px 30px;
-        background: #00d4ff;
-        color: #0a1628;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: background 0.3s;
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 0 40px;
       }
-      .btn:hover {
-        background: #00b8e6;
-      }
-      .features {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        padding: 80px;
-        flex-wrap: wrap;
-      }
-      .feature-card {
+      .contact-card {
         background: #0d1f3c;
-        padding: 30px;
+        padding: 35px;
         border-radius: 10px;
-        width: 300px;
-        text-align: center;
         border: 1px solid #1a3a5c;
+        text-align: center;
+        transition:
+          transform 0.3s,
+          border-color 0.3s;
       }
-      .feature-card h3 {
+      .contact-card:hover {
+        transform: translateY(-5px);
+        border-color: #00d4ff;
+      }
+      .contact-card h3 {
         color: #00d4ff;
+        font-size: 1.3rem;
         margin-bottom: 15px;
       }
-      .feature-card p {
+      .contact-card p,
+      .contact-card a {
         color: #b0c4de;
+        font-size: 0.95rem;
+        text-decoration: none;
+      }
+      .contact-card a:hover {
+        color: #00d4ff;
       }
       footer {
         text-align: center;
@@ -96,6 +97,7 @@
         background: #0d1f3c;
         color: #b0c4de;
         border-top: 1px solid #1a3a5c;
+        margin-top: 60px;
       }
     </style>
   </head>
@@ -111,26 +113,37 @@
     </nav>
 
     <section class="hero">
-      <h1>Powerful Hospitality Technology</h1>
-      <p>
-        Empowering hotels, restaurants, and resorts with cutting-edge software
-        solutions.
-      </p>
-      <a href="/members/" class="btn">Get Started</a>
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you. Reach out to our team across EMEA.</p>
     </section>
 
-    <section class="features">
-      <div class="feature-card">
-        <h3>Hotel Management</h3>
-        <p>Streamline bookings, check-ins, and guest services.</p>
+    <section class="contact-grid">
+      <div class="contact-card">
+        <h3>🌐 Website</h3>
+        <a href="https://kwentra.com/" target="_blank">kwentra.com</a>
       </div>
-      <div class="feature-card">
-        <h3>Restaurant POS</h3>
-        <p>Fast, reliable point-of-sale systems for dining.</p>
+      <div class="contact-card">
+        <h3>📍 Headquarters</h3>
+        <p>EMEA Region</p>
+        <p>Sales offices across Europe, Middle East, and Africa</p>
       </div>
-      <div class="feature-card">
-        <h3>Analytics</h3>
-        <p>Real-time data to grow your business.</p>
+      <div class="contact-card">
+        <h3>👥 Company Size</h3>
+        <p>11-50 Employees</p>
+        <p>Founded in 2013</p>
+      </div>
+      <div class="contact-card">
+        <h3>🌍 Global Reach</h3>
+        <p>Serving clients in 20+ countries worldwide</p>
+      </div>
+      <div class="contact-card">
+        <h3>💼 LinkedIn</h3>
+        <p>51+ team members on LinkedIn</p>
+      </div>
+      <div class="contact-card">
+        <h3>📞 Get In Touch</h3>
+        <p>Visit our website to request a demo or contact sales</p>
+        <a href="https://kwentra.com/" target="_blank">Request Demo →</a>
       </div>
     </section>
 

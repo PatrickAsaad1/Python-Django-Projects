@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services — Kwentra</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #0a1628;
+        color: white;
+        line-height: 1.6;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 80px;
+        background: #0d1f3c;
+        border-bottom: 1px solid #1a3a5c;
+      }
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #00d4ff;
+      }
+      .nav-links a {
+        color: #b0c4de;
+        text-decoration: none;
+        margin-left: 30px;
+        font-size: 1rem;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: #00d4ff;
+      }
+      .hero {
+        text-align: center;
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #0a1628 0%, #0d1f3c 100%);
+      }
+      .hero h1 {
+        font-size: 3rem;
+        color: #00d4ff;
+        margin-bottom: 20px;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        color: #b0c4de;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 0 40px;
+      }
+      .service-card {
+        background: #0d1f3c;
+        padding: 35px;
+        border-radius: 10px;
+        border: 1px solid #1a3a5c;
+        transition:
+          transform 0.3s,
+          border-color 0.3s;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        border-color: #00d4ff;
+      }
+      .service-card h3 {
+        color: #00d4ff;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+      }
+      .service-card p {
+        color: #b0c4de;
+        font-size: 0.95rem;
+      }
+      footer {
+        text-align: center;
+        padding: 30px;
+        background: #0d1f3c;
+        color: #b0c4de;
+        border-top: 1px solid #1a3a5c;
+        margin-top: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Kwentra</div>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/services/">Services</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <h1>Our Services</h1>
+      <p>
+        Comprehensive hospitality solutions designed to increase revenue,
+        improve efficiency, and build guest loyalty.
+      </p>
+    </section>
+
+    <section class="services-grid">
+      <div class="service-card">
+        <h3>📋 Reservations Management</h3>
+        <p>
+          Powerful booking engine to increase online reservations and reduce
+          dependence on third-party platforms.
+        </p>
+      </div>
+      <div class="service-card">
+        <h3>🏨 Front Office Operations</h3>
+        <p>
+          Streamline check-ins, guest profiles, room assignments, and billing
+          from one unified dashboard.
+        </p>
+      </div>
+      <div class="service-card">
+        <h3>📊 Revenue Optimization</h3>
+        <p>
+          Dynamic pricing strategies and real-time analytics to maximize your
+          property's revenue potential.
+        </p>
+      </div>
+      <div class="service-card">
+        <h3>🧾 Automated Accounting</h3>
+        <p>
+          Simplify financial management with automated invoicing, expense
+          tracking, and reporting.
+        </p>
+      </div>
+      <div class="service-card">
+        <h3>📦 Inventory Management</h3>
+        <p>
+          Track stock levels, manage suppliers, and automate reordering across
+          all your properties.
+        </p>
+      </div>
+      <div class="service-card">
+        <h3>❤️ Guest Loyalty & CRM</h3>
+        <p>
+          Build lasting relationships with personalized guest experiences and
+          targeted loyalty programs.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Kwentra. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
