@@ -39,6 +39,21 @@
       .nav-links a:hover {
         color: #00d4ff;
       }
+      .nav-links form {
+        display: inline;
+      }
+      .nav-links form button {
+        margin-left: 30px;
+        background: none;
+        border: none;
+        color: #b0c4de;
+        font-size: 1rem;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .nav-links form button:hover {
+        color: #00d4ff;
+      }
       .hero {
         text-align: center;
         padding: 100px 20px;
@@ -72,9 +87,30 @@
       <div class="nav-links">
         <a href="/">Home</a>
         <a href="/about/">About</a>
+        {% if user.is_authenticated %}
         <a href="/services/">Services</a>
         <a href="/contact/">Contact</a>
+        <a href="/members/">Members</a>
+        <form method="post" action="/logout/" style="display: inline">
+          {% csrf_token %}
+          <button
+            type="submit"
+            style="
+              background: none;
+              border: none;
+              color: #b0c4de;
+              font-size: 1rem;
+              cursor: pointer;
+              font-family: inherit;
+            "
+          >
+            Logout
+          </button>
+        </form>
+        {% else %}
         <a href="/login/">Login</a>
+        <a href="/signup/">Sign Up</a>
+        {% endif %}
       </div>
     </nav>
 
@@ -86,8 +122,6 @@
       </p>
     </section>
 
-    <footer>
-      <p>&copy; 2026 Kwentra. All rights reserved.</p>
-    </footer>
+    <footer><p>&copy; 2026 Kwentra. All rights reserved.</p></footer>
   </body>
 </html>

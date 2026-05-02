@@ -39,6 +39,21 @@
       .nav-links a:hover {
         color: #00d4ff;
       }
+      .nav-links form {
+        display: inline;
+      }
+      .nav-links form button {
+        margin-left: 30px;
+        background: none;
+        border: none;
+        color: #b0c4de;
+        font-size: 1rem;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .nav-links form button:hover {
+        color: #00d4ff;
+      }
       .hero {
         text-align: center;
         padding: 80px 20px;
@@ -101,9 +116,30 @@
       <div class="nav-links">
         <a href="/">Home</a>
         <a href="/about/">About</a>
+        {% if user.is_authenticated %}
         <a href="/services/">Services</a>
         <a href="/contact/">Contact</a>
+        <a href="/members/">Members</a>
+        <form method="post" action="/logout/" style="display: inline">
+          {% csrf_token %}
+          <button
+            type="submit"
+            style="
+              background: none;
+              border: none;
+              color: #b0c4de;
+              font-size: 1rem;
+              cursor: pointer;
+              font-family: inherit;
+            "
+          >
+            Logout
+          </button>
+        </form>
+        {% else %}
         <a href="/login/">Login</a>
+        <a href="/signup/">Sign Up</a>
+        {% endif %}
       </div>
     </nav>
 
@@ -118,50 +154,32 @@
     <section class="services-grid">
       <div class="service-card">
         <h3>📋 Reservations Management</h3>
-        <p>
-          Powerful booking engine to increase online reservations and reduce
-          dependence on third-party platforms.
-        </p>
+        <p>Powerful booking engine to increase online reservations.</p>
       </div>
       <div class="service-card">
         <h3>🏨 Front Office Operations</h3>
         <p>
-          Streamline check-ins, guest profiles, room assignments, and billing
-          from one unified dashboard.
+          Streamline check-ins, guest profiles, room assignments, and billing.
         </p>
       </div>
       <div class="service-card">
         <h3>📊 Revenue Optimization</h3>
-        <p>
-          Dynamic pricing strategies and real-time analytics to maximize your
-          property's revenue potential.
-        </p>
+        <p>Dynamic pricing strategies and real-time analytics.</p>
       </div>
       <div class="service-card">
         <h3>🧾 Automated Accounting</h3>
-        <p>
-          Simplify financial management with automated invoicing, expense
-          tracking, and reporting.
-        </p>
+        <p>Simplify financial management with automated invoicing.</p>
       </div>
       <div class="service-card">
         <h3>📦 Inventory Management</h3>
-        <p>
-          Track stock levels, manage suppliers, and automate reordering across
-          all your properties.
-        </p>
+        <p>Track stock levels, manage suppliers, and automate reordering.</p>
       </div>
       <div class="service-card">
         <h3>❤️ Guest Loyalty & CRM</h3>
-        <p>
-          Build lasting relationships with personalized guest experiences and
-          targeted loyalty programs.
-        </p>
+        <p>Build lasting relationships with personalized guest experiences.</p>
       </div>
     </section>
 
-    <footer>
-      <p>&copy; 2026 Kwentra. All rights reserved.</p>
-    </footer>
+    <footer><p>&copy; 2026 Kwentra. All rights reserved.</p></footer>
   </body>
 </html>

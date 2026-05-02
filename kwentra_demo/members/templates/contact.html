@@ -39,6 +39,21 @@
       .nav-links a:hover {
         color: #00d4ff;
       }
+      .nav-links form {
+        display: inline;
+      }
+      .nav-links form button {
+        margin-left: 30px;
+        background: none;
+        border: none;
+        color: #b0c4de;
+        font-size: 1rem;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .nav-links form button:hover {
+        color: #00d4ff;
+      }
       .hero {
         text-align: center;
         padding: 80px 20px;
@@ -107,9 +122,30 @@
       <div class="nav-links">
         <a href="/">Home</a>
         <a href="/about/">About</a>
+        {% if user.is_authenticated %}
         <a href="/services/">Services</a>
         <a href="/contact/">Contact</a>
+        <a href="/members/">Members</a>
+        <form method="post" action="/logout/" style="display: inline">
+          {% csrf_token %}
+          <button
+            type="submit"
+            style="
+              background: none;
+              border: none;
+              color: #b0c4de;
+              font-size: 1rem;
+              cursor: pointer;
+              font-family: inherit;
+            "
+          >
+            Logout
+          </button>
+        </form>
+        {% else %}
         <a href="/login/">Login</a>
+        <a href="/signup/">Sign Up</a>
+        {% endif %}
       </div>
     </nav>
 
@@ -126,32 +162,25 @@
       <div class="contact-card">
         <h3>📍 Headquarters</h3>
         <p>EMEA Region</p>
-        <p>Sales offices across Europe, Middle East, and Africa</p>
       </div>
       <div class="contact-card">
         <h3>👥 Company Size</h3>
         <p>11-50 Employees</p>
-        <p>Founded in 2013</p>
       </div>
       <div class="contact-card">
         <h3>🌍 Global Reach</h3>
-        <p>Serving clients in 20+ countries worldwide</p>
+        <p>20+ countries worldwide</p>
       </div>
       <div class="contact-card">
         <h3>💼 LinkedIn</h3>
-        <p>51+ team members on LinkedIn</p>
+        <p>51+ team members</p>
       </div>
       <div class="contact-card">
         <h3>📞 Get In Touch</h3>
-        <p>Visit our website to request a demo or contact sales</p>
-        <a href="https://www.kwentra.com/get-started/" target="_blank"
-          >Request Demo →</a
-        >
+        <a href="https://kwentra.com/" target="_blank">Request Demo →</a>
       </div>
     </section>
 
-    <footer>
-      <p>&copy; 2026 Kwentra. All rights reserved.</p>
-    </footer>
+    <footer><p>&copy; 2026 Kwentra. All rights reserved.</p></footer>
   </body>
 </html>

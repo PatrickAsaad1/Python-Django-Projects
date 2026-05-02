@@ -39,6 +39,21 @@
       .nav-links a:hover {
         color: #00d4ff;
       }
+      .nav-links form {
+        display: inline;
+      }
+      .nav-links form button {
+        margin-left: 30px;
+        background: none;
+        border: none;
+        color: #b0c4de;
+        font-size: 1rem;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .nav-links form button:hover {
+        color: #00d4ff;
+      }
       .hero {
         text-align: center;
         padding: 80px 20px;
@@ -127,9 +142,30 @@
       <div class="nav-links">
         <a href="/">Home</a>
         <a href="/about/">About</a>
+        {% if user.is_authenticated %}
         <a href="/services/">Services</a>
         <a href="/contact/">Contact</a>
+        <a href="/members/">Members</a>
+        <form method="post" action="/logout/" style="display: inline">
+          {% csrf_token %}
+          <button
+            type="submit"
+            style="
+              background: none;
+              border: none;
+              color: #b0c4de;
+              font-size: 1rem;
+              cursor: pointer;
+              font-family: inherit;
+            "
+          >
+            Logout
+          </button>
+        </form>
+        {% else %}
         <a href="/login/">Login</a>
+        <a href="/signup/">Sign Up</a>
+        {% endif %}
       </div>
     </nav>
 
@@ -146,8 +182,7 @@
       <p>
         Kwentra is an all-in-one hospitality management system founded in 2013
         by experienced hoteliers who understood the challenges of running a
-        hospitality business. We combine the reliability of traditional systems
-        with the speed and flexibility of cloud-based solutions.
+        hospitality business.
       </p>
 
       <h2>Our Four Key Promises</h2>
@@ -170,17 +205,10 @@
         </div>
       </div>
 
-      <h2>What We Offer</h2>
-      <p>
-        Our platform includes a broad range of modules that manage every aspect
-        of hospitality operations — from reservations, online bookings, and
-        front desk management to automated accounting and inventory management.
-      </p>
-
       <h2>Global Reach</h2>
       <p>
-        With sales offices and representatives throughout EMEA, Kwentra proudly
-        serves a growing client roster in more than 20 countries.
+        With sales offices throughout EMEA, Kwentra serves clients in more than
+        20 countries.
       </p>
 
       <div class="stats">
@@ -194,13 +222,11 @@
         </div>
         <div class="stat">
           <h3>20+</h3>
-          <p>Countries Served</p>
+          <p>Countries</p>
         </div>
       </div>
     </section>
 
-    <footer>
-      <p>&copy; 2026 Kwentra. All rights reserved.</p>
-    </footer>
+    <footer><p>&copy; 2026 Kwentra. All rights reserved.</p></footer>
   </body>
 </html>
