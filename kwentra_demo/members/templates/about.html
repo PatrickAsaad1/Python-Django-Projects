@@ -41,18 +41,19 @@
       }
       .nav-links form {
         display: inline;
+        margin-left: 30px;
       }
       .nav-links form button {
-        margin-left: 30px;
         background: none;
         border: none;
         color: #b0c4de;
         font-size: 1rem;
         cursor: pointer;
         font-family: inherit;
+        transition: color 0.3s;
       }
       .nav-links form button:hover {
-        color: #00d4ff;
+        color: #ff4444;
       }
       .hero {
         text-align: center;
@@ -146,21 +147,9 @@
         <a href="/services/">Services</a>
         <a href="/contact/">Contact</a>
         <a href="/members/">Members</a>
-        <form method="post" action="/logout/" style="display: inline">
+        <form method="post" action="/logout/">
           {% csrf_token %}
-          <button
-            type="submit"
-            style="
-              background: none;
-              border: none;
-              color: #b0c4de;
-              font-size: 1rem;
-              cursor: pointer;
-              font-family: inherit;
-            "
-          >
-            Logout
-          </button>
+          <button type="submit">Logout</button>
         </form>
         {% else %}
         <a href="/login/">Login</a>
@@ -181,36 +170,32 @@
       <h2>Who We Are</h2>
       <p>
         Kwentra is an all-in-one hospitality management system founded in 2013
-        by experienced hoteliers who understood the challenges of running a
-        hospitality business.
+        by experienced hoteliers.
       </p>
-
       <h2>Our Four Key Promises</h2>
       <div class="promises">
         <div class="promise-card">
           <h3>📈 Increased Revenue</h3>
-          <p>Maximize bookings and optimize pricing strategies.</p>
+          <p>Maximize bookings and optimize pricing.</p>
         </div>
         <div class="promise-card">
           <h3>⚙️ Operational Efficiency</h3>
-          <p>Streamline front office and back-office operations.</p>
+          <p>Streamline all operations.</p>
         </div>
         <div class="promise-card">
           <h3>💰 Cost-Effectiveness</h3>
-          <p>Reduce overhead while improving service quality.</p>
+          <p>Reduce overhead.</p>
         </div>
         <div class="promise-card">
           <h3>❤️ Guest Loyalty</h3>
-          <p>Create memorable experiences that keep guests returning.</p>
+          <p>Keep guests returning.</p>
         </div>
       </div>
-
       <h2>Global Reach</h2>
       <p>
         With sales offices throughout EMEA, Kwentra serves clients in more than
         20 countries.
       </p>
-
       <div class="stats">
         <div class="stat">
           <h3>2013</h3>

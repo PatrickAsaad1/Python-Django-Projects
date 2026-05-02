@@ -41,18 +41,19 @@
       }
       .nav-links form {
         display: inline;
+        margin-left: 30px;
       }
       .nav-links form button {
-        margin-left: 30px;
         background: none;
         border: none;
         color: #b0c4de;
         font-size: 1rem;
         cursor: pointer;
         font-family: inherit;
+        transition: color 0.3s;
       }
       .nav-links form button:hover {
-        color: #00d4ff;
+        color: #ff4444;
       }
       .hero {
         text-align: center;
@@ -126,21 +127,9 @@
         <a href="/services/">Services</a>
         <a href="/contact/">Contact</a>
         <a href="/members/">Members</a>
-        <form method="post" action="/logout/" style="display: inline">
+        <form method="post" action="/logout/">
           {% csrf_token %}
-          <button
-            type="submit"
-            style="
-              background: none;
-              border: none;
-              color: #b0c4de;
-              font-size: 1rem;
-              cursor: pointer;
-              font-family: inherit;
-            "
-          >
-            Logout
-          </button>
+          <button type="submit">Logout</button>
         </form>
         {% else %}
         <a href="/login/">Login</a>
@@ -157,27 +146,27 @@
     <section class="contact-grid">
       <div class="contact-card">
         <h3>🌐 Website</h3>
-        <a href="https://kwentra.com/" target="_blank">kwentra.com</a>
+        <a href="https://kwentra.com/">kwentra.com</a>
       </div>
       <div class="contact-card">
-        <h3>📍 Headquarters</h3>
+        <h3>📍 HQ</h3>
         <p>EMEA Region</p>
       </div>
       <div class="contact-card">
-        <h3>👥 Company Size</h3>
+        <h3>👥 Size</h3>
         <p>11-50 Employees</p>
       </div>
       <div class="contact-card">
-        <h3>🌍 Global Reach</h3>
-        <p>20+ countries worldwide</p>
+        <h3>🌍 Reach</h3>
+        <p>20+ Countries</p>
       </div>
       <div class="contact-card">
         <h3>💼 LinkedIn</h3>
-        <p>51+ team members</p>
+        <p>51+ Members</p>
       </div>
       <div class="contact-card">
-        <h3>📞 Get In Touch</h3>
-        <a href="https://kwentra.com/" target="_blank">Request Demo →</a>
+        <h3>📞 Demo</h3>
+        <a href="https://kwentra.com/">Request →</a>
       </div>
     </section>
 

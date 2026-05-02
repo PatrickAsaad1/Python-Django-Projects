@@ -41,18 +41,19 @@
       }
       .nav-links form {
         display: inline;
+        margin-left: 30px;
       }
       .nav-links form button {
-        margin-left: 30px;
         background: none;
         border: none;
         color: #b0c4de;
         font-size: 1rem;
         cursor: pointer;
         font-family: inherit;
+        transition: color 0.3s;
       }
       .nav-links form button:hover {
-        color: #00d4ff;
+        color: #ff4444;
       }
       .hero {
         text-align: center;
@@ -91,21 +92,9 @@
         <a href="/services/">Services</a>
         <a href="/contact/">Contact</a>
         <a href="/members/">Members</a>
-        <form method="post" action="/logout/" style="display: inline">
+        <form method="post" action="/logout/">
           {% csrf_token %}
-          <button
-            type="submit"
-            style="
-              background: none;
-              border: none;
-              color: #b0c4de;
-              font-size: 1rem;
-              cursor: pointer;
-              font-family: inherit;
-            "
-          >
-            Logout
-          </button>
+          <button type="submit">Logout</button>
         </form>
         {% else %}
         <a href="/login/">Login</a>
